@@ -1,0 +1,12 @@
+#!/bin/bash
+MAPNAME=$1
+TARGET=$2
+if [ $TARGET=="" ];then
+	export TARGET=$MAPNAME
+fi
+if [ $MAPNAME = "-h" ];then
+	echo "Use this command to save a map to a destination in the cloud datastore"
+	echo "usage: ./mcopy.sh <mapname> <optional:destinationMapName,default=<mapname>>"
+	exit 0
+fi
+aws s3 cp --recursive $SERVER_HOME/$MAPNAME/ s3://chickeninthehat/server/$TARGET
