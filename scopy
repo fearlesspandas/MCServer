@@ -1,0 +1,32 @@
+#!/bin/bash
+aws s3 cp --recursive $SERVER_HOME/playerdata/ s3://chickeninthehat/server/playerdata
+
+aws s3 cp --recursive $SERVER_HOME/data/ s3://chickeninthehat/server/data
+
+
+aws s3 cp --recursive $SERVER_HOME/advancements/ s3://chickeninthehat/server/advancements
+
+
+aws s3 cp --recursive $SERVER_HOME/poi/ s3://chickeninthehat/server/poi
+
+aws s3 cp --recursive $SERVER_HOME/stats/ s3://chickeninthehat/server/stats
+
+aws s3 cp --recursive $SERVER_HOME/region/ s3://chickeninthehat/server/region
+
+
+
+aws s3 cp $SERVER_HOME/banned-ips.json s3://chickeninthehat/server/banned-ips.json
+aws s3 cp $SERVER_HOME/banned-players.json s3://chickeninthehat/server/banned-players.json
+aws s3 cp $SERVER_HOME/whitelist.json s3://chickeninthehat/server/whitelist.json
+
+aws s3 cp $SERVER_HOME/level.dat s3://chickeninthehat/server/level.dat
+
+aws s3 cp $SERVER_HOME/level.dat_old s3://chickeninthehat/server/level.dat_old
+
+aws s3 cp $SERVER_HOME/bukkit.yml s3://chickeninthehat/server/bukkit.yml
+
+aws s3 cp $SERVER_HOME/commands.yml s3://chickeninthehat/server/commands.yml
+
+aws s3 cp $SERVER_HOME/ops.json s3://chickeninthehat/server/ops.json
+
+aws s3 cp $SERVER_HOME/permissions.yml s3://chickeninthehat/server/permissions.yml

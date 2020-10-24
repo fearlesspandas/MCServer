@@ -1,6 +1,9 @@
 #!/bin/bash
 
-REPO=""
+REPONAME=MCServer
+REPOHOST=""
 sudo yum install git
-git clone $REPO
-cd MCServer
+git clone $REPOHOST/$REPONAME
+chmod +x -R $REPONAME
+cd $REPONAME
+./install_dependencies.sh

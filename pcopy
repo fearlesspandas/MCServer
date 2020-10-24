@@ -1,0 +1,3 @@
+#!/bin/bash
+
+aws s3 cp --recursive $SERVER_HOME/plugins/ s3://chickeninthehat/server/plugins
