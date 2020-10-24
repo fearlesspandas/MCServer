@@ -22,7 +22,8 @@ wget $SCALA_LIBRARY
 sudo yum install scala-$SCALA_VERSION.rpm -y
 
 #pull existing server data
-aws s3 cp --recursive s3://$BUCKET_NAME/server .
+mkdir server
+aws s3 cp --recursive s3://$BUCKET_NAME/server/ ./server
 
 #set server home
 

@@ -1,9 +1,11 @@
 #!/bin/bash
-
-REPONAME=MCServer
-REPOHOST=""
-sudo yum install git
-git clone $REPOHOST/$REPONAME
+cd /home/ec2-user
+REPONAME="MCServer"
+REPOHOST="https://github.com/fearlesspandas"
+yum update -y
+yum install git -y
+git clone $REPOHOST/$REPONAME.git
 chmod +x -R $REPONAME
+chmod 777 -R $REPONAME
 cd $REPONAME
-./install_dependencies.sh
+nohup ./install_dependencies.sh > install_logs &
