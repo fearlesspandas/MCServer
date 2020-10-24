@@ -25,7 +25,10 @@ sudo yum install scala-$SCALA_VERSION.rpm -y
 aws s3 cp --recursive s3://$BUCKET_NAME/server .
 
 #set server home
+
 ADD_HOME="export SERVER_HOME=`pwd`/server"
+ADD_ADMIN="export ADMIN_HOME=`pwd`"
 echo $ADD_HOME >> ~/.bashrc
+echo $ADD_ADMIN >> ~/.bashrc
 source ~/.bashrc
 
