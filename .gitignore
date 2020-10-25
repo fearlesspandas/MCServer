@@ -1,0 +1,5 @@
+*/server/*
+server/*
+*.jar
+*.rpm
+*logs
