@@ -9,7 +9,7 @@ JAVA_LIBRARY=java-1.8.0-openjdk.x86_64
 #set spigot version
 SPIGOT_VERSION=1.16.3
 SPIGOT_LIBRARY=https://cdn.getbukkit.org/spigot/spigot-$SPIGOT_VERSION.jar
-
+SPIGOT_INSTALL=`ls | grep spigot`
 #set scala version
 SCALA_VERSION=2.12.10
 SCALA_LIBRARY=http://downloads.lightbend.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.rpm
@@ -24,12 +24,12 @@ sudo yum install scala-$SCALA_VERSION.rpm -y
 #pull existing server data
 mkdir server
 aws s3 cp --recursive s3://$BUCKET_NAME/server/ ./server
-
+sudo cp $SPIGOT_INSTALL server/
 #set server home
 
 ADD_HOME="export SERVER_HOME=`pwd`/server"
 ADD_ADMIN="export ADMIN_HOME=`pwd`"
-echo $ADD_HOME >> ~/.bashrc
-echo $ADD_ADMIN >> ~/.bashrc
-source ~/.bashrc
+echo $ADD_HOME >> /home/ec2-user/.bashrc
+echo $ADD_ADMIN >> /home/ec2-user/.bashrc
+source /home/ec2-user/.bashrc
 
